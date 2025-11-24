@@ -1,31 +1,77 @@
 ## 💻 Proyecto: Pruebas de diseño y funcionalidad para app de movilidad | Bootcamp TripleTen (2025)
 
-### Descripción
-Ejecución de **pruebas de diseño y funcionalidad** en una aplicación de taxis.  
-- Detecté errores en la **apariencia de botones y elementos** de la app.  
-- Validé funciones clave para la **experiencia del usuario** mediante pruebas manuales y clases de equivalencia.  
-- Realicé un análisis detallado de los **requisitos** y una **comparación exhaustiva con los diseños en FIGMA**.  
+## 1. Prueba de diseño
 
-**Resultados de las pruebas:**  
-- Ejecuté **5 pruebas** para la opción "Reservar" y detecté **4 errores**.  
-- Elaboré dos listas de comprobación:  
-  1. **Validación de diseño:** 10 errores de 22 pruebas realizadas.  
-  2. **Clases de equivalencia para botones "Método de pago" y "Agregar tarjeta":** 7 errores de 15 pruebas realizadas.  
+**Resultados:**
+- Se probó correctamente el estado inicial del formulario.  
+- Se validaron las tres tarifas (Daily, Camping, Luxury).  
+- Se verificaron elementos clave: licencia de conducir y método de pago.  
+- Se probó la funcionalidad del temporizador de 30 segundos.  
+- Se comprobó la ventana **"Automóvil reservado"** y los procesos de cancelación.  
+
+**Bugs críticos detectados:**
+- El ícono del automóvil seleccionado **no aumenta de tamaño** al hacer clic.  
+- Solo se muestran automóviles de la tarifa seleccionada.  
+- Problemas en las descripciones de tarifas.  
+
+**Bug crítico faltante por detectar:**
+- Los vehículos se muestran solo en una dirección cuando se usa automóvil compartido.
 
 ---
 
-### 🛠 Habilidades destacadas
+## 2. Prueba de funcionalidad del formulario
+
+**Resultados:**
+
+**Campo Número de tarjeta**
+- No se agregan espacios automáticamente al perder el foco.  
+- El botón permanece inactivo con menos de 12 caracteres.  
+- No se permite ingresar más de 12 caracteres.  
+- El sistema no valida correctamente caracteres no permitidos.
+
+**Campo CVV/CVC**
+- El botón permanece inactivo con menos de 2 caracteres.  
+- No se permite ingresar más de 2 caracteres.  
+- No se valida correctamente el rango **01–99**.
+
+---
+
+## 3. Prueba de la lógica del botón “Reservar”
+
+**Resultados de los 5 estados probados:**
+
+- **Todos los campos completos →** *Reservar* (Aprobado).  
+- **Sin licencia →** *Agregar licencia de conducir y reservar* (No aprobado, bug reportado).  
+- **Sin método de pago →** *Agregar método de pago y reservar* (No aprobado, bug reportado).  
+- **Sin direcciones →** Botón inhabilitado (No aprobado, bug esperado).  
+- **Campos incompletos →** Error en comportamiento (No aprobado, bug reportado).  
+
+---
+
+## 4. Prueba de la funcionalidad de Reservar
+
+**Resultados:**
+- Se incluyó el caso principal de reserva exitosa.  
+- Se replicaron adecuadamente casos con comportamientos idénticos.  
+- Se validaron escenarios con campos faltantes.
+
+---
+
+## 🧩 Habilidades destacadas
+
 - Pruebas de diseño  
 - Documentación de errores  
 - Validación de flujo y funcionalidad  
 
 ---
 
-### 🖥 Herramientas utilizadas
-- **FIGMA**  
-- **JIRA**  
-- **DevTools**
+## 🖥 Herramientas utilizadas
+
+- FIGMA  
+- JIRA  
+- Herramientas de desarrollo  
 
 ---
 
-[Abrir informe completo en Google Sheets](https://docs.google.com/spreadsheets/d/1WW2UIXk5l1v_vQT8KM0gKFWdJpStbHa0Q_I3hS0DnVc/edit?gid=916112575#gid=916112575)
+## 🔗 Documento original  
+[(https://docs.google.com/document/d/10MEVSTywR_OvOlDerA6YJ1na1QVgKk2yvkNHHhBee04/edit?usp=sharing)]
